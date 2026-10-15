@@ -20,10 +20,19 @@ The OWASP MASVS is an industry standard that lists security requirements for mob
 Resource: OWASP Mobile Application Security Verification Standard (MASVS) - https://mas.owasp.org/MASVS/
 
 ## Networking
+BGP lets networks announce which IP prefixes they can reach, and routers trust those announcements. In a hijack, a network falsely announces a prefix it does not own, or a more specific one, so routers send traffic to the attacker. RPKI lets prefix holders publish signed Route Origin Authorizations naming which AS may originate a prefix, so routers can reject invalid origins. RPKI does not validate the AS path, so path manipulation and route leaks remain possible.
+
+Resource: RFC 6811 - BGP Prefix Origin Validation - https://www.rfc-editor.org/rfc/rfc6811
 
 ## Cybersecurity
+Log4Shell was a flaw in Apache Log4j 2, a very common Java logging library. Its JNDI lookup feature could load and run code from an attacker-controlled LDAP server when a crafted string was logged, so one request could give remote code execution. It was rated critical, CVSS 10.0, because it needed no login, was easy to exploit over the network, and the library was everywhere. The first fix was Log4j 2.15.0, with later releases closing related gaps.
+
+Resource: Apache Logging Services - Security (known vulnerabilities) - https://logging.apache.org/security.html
 
 ## Data
+An SBOM is a formal, machine-readable inventory of the components and dependencies inside a piece of software, like an ingredient list. It helps organizations find affected products quickly when a vulnerability is announced. The NTIA minimum data fields are: supplier name, component name, version of the component, other unique identifiers, dependency relationship, author of the SBOM data, and timestamp. The NTIA also expects automation support and regular updates.
+
+Resource: The Minimum Elements For a Software Bill of Materials (SBOM) - https://www.ntia.doc.gov/report/2021/minimum-elements-software-bill-materials-sbom
 
 ## Misconception in My Track
 
