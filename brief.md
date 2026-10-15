@@ -35,5 +35,7 @@ An SBOM is a formal, machine-readable inventory of the components and dependenci
 Resource: The Minimum Elements For a Software Bill of Materials (SBOM) - https://www.ntia.doc.gov/report/2021/minimum-elements-software-bill-materials-sbom
 
 ## Misconception in My Track
+A common wrong belief is that keeping secrets in a separate config file, which is not committed to the repository, fully follows Twelve-Factor. This is not correct. The Twelve-Factor App says this is an improvement over constants in code, but it still has weaknesses: the file is easy to check in by mistake, and config files get scattered in different places and formats. The correct approach is to store config in environment variables. Proof: section III. Config, heading "Store config in the environment".
 
 ## Open Question
+If a secret was already committed to a repository by mistake, what steps should a developer take to remove it and make sure it can no longer be abused?
